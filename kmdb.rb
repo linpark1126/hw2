@@ -94,27 +94,76 @@ Role.destroy_all
 # TODO!
 
 #Inserting data to Studio table
-studio_1 = Studio.new
-studio_1["name"] = "Warner Bros."
-studio_1.save
+warner = Studio.new
+warner["name"] = "Warner Bros."
+warner.save
 
-#Inserting data to Studio table
-actor_1 = Actor.new
-actor_1["name"] = 
-actor_1.save
+#Inserting data to Actor table
+bale = Actor.new
+bale["name"] = "Christian Bale"
+bale.save
 
-movie_1 = Movie.new
-movie_1["title"] = "Apple"
-movie_1["year_released"] = "Cupertino"
-movie_1["rated"] = "CA"
-movie_1["studio_id"] =
-movie_1
-movie_1.save
+michael = Actor.new
+michael["name"] = "Michael Caine"
+michael.save
 
-# Batman Begins          2005           PG-13  Warner Bros.
-# The Dark Knight        2008           PG-13  Warner Bros.
-# The Dark Knight Rises  2012           PG-13  Warner Bros.
+liam = Actor.new
+liam["name"] = "Liam Neeson"
+liam.save
 
+katie = Actor.new
+katie["name"] = "Katie Holmes"
+katie.save
+
+gary = Actor.new
+gary["name"] = "Gary Oldman"
+gary.save
+
+heath = Actor.new
+heath["name"] = "Heath Ledger"
+heath.save
+
+aaron = Actor.new
+aaron["name"] = "Aaron Eckhart"
+aaron.save
+
+maggie = Actor.new
+maggie["name"] = "Maggie Gyllenhaal"
+maggie.save
+
+tom = Actor.new
+tom["name"] = "Tom Hardy"
+tom.save
+
+joseph = Actor.new
+joseph["name"] = "Joseph Gordon-Levitt"
+joseph.save
+
+anne = Actor.new
+anne["name"] = "Anne Hathaway"
+anne.save
+
+#Inserting data to Movie table
+batman_begins = Movie.new
+batman_begins["title"] = "Batman Begins"
+batman_begins["year_released"] = "2005"
+batman_begins["rated"] = "PG-13"
+batman_begins["studio_id"] = warner["id"]
+batman_begins.save
+
+dark_knight = Movie.new
+dark_knight["title"] = "The Dark Knight"
+dark_knight["year_released"] = "2008"
+dark_knight["rated"] = "PG-13"
+dark_knight["studio_id"] = warner["id"]
+dark_knight.save
+
+dark_knight_rises = Movie.new
+dark_knight_rises["title"] = "The Dark Knight Rises"
+dark_knight_rises["year_released"] = "2012"
+dark_knight_rises["rated"] = "PG-13"
+dark_knight_rises["studio_id"] = warner["id"]
+dark_knight_rises.save
 
 
 # Prints a header for the movies output
