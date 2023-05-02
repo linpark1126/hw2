@@ -267,19 +267,16 @@ puts ""
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
 
-warner_movies = Movie.where({"studio_id" => warner["id"]})
+movies = Movie.all
 
-for movie in warner_movies
+for movie in movies
     name = movie["title"]
     year = movie["year_released"]
     rated = movie["rated"]
-    puts "#{name} #{year} #{rated}"
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+    studio_name = studio["name"]
+    puts "#{name} #{year} #{rated} #{studio_name}"
 end
-
-# Batman Begins          2005           PG-13  Warner Bros.
-# The Dark Knight        2008           PG-13  Warner Bros.
-# The Dark Knight Rises  2012           PG-13  Warner Bros.
-# 3. What is the full name of each contact who works at Apple?
 
 
 # Prints a header for the cast output
@@ -291,13 +288,15 @@ puts ""
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
 
-warner_movies = Movie.where({"studio_id" => warner["id"]})
+roles = Role.all
 
-for movie in warner_movies
-    name = movie["title"]
-    year = movie["year_released"]
-    rated = movie["rated"]
-    puts "#{name} #{year} #{rated}"
+for role in roles
+    movie = Movie.find_by({"id"  => role["movie_id"]})
+    movie_name = movie["title"]
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    actor_name = actor["name"]
+    name = role["character_name"]
+    puts "#{movie_name} #{actor_name} #{name}"
 end
 
 # Batman Begins          Christian Bale        Bruce Wayne
