@@ -93,6 +93,30 @@ Role.destroy_all
 # Do not use hard-coded foreign key IDs.
 # TODO!
 
+#Inserting data to Studio table
+studio_1 = Studio.new
+studio_1["name"] = "Warner Bros."
+studio_1.save
+
+#Inserting data to Studio table
+actor_1 = Actor.new
+actor_1["name"] = 
+actor_1.save
+
+movie_1 = Movie.new
+movie_1["title"] = "Apple"
+movie_1["year_released"] = "Cupertino"
+movie_1["rated"] = "CA"
+movie_1["studio_id"] =
+movie_1
+movie_1.save
+
+# Batman Begins          2005           PG-13  Warner Bros.
+# The Dark Knight        2008           PG-13  Warner Bros.
+# The Dark Knight Rises  2012           PG-13  Warner Bros.
+
+
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
