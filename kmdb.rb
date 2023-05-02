@@ -296,5 +296,5 @@ for role in roles
     actor = Actor.find_by({"id" => role["actor_id"]})
     actor_name = actor["name"]
     name = role["character_name"]
-    puts "#{movie_name} - #{actor_name} - #{name}"
+    puts "#{movie_name}: #{actor_name} - #{name}"
 end
