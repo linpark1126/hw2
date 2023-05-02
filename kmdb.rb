@@ -74,16 +74,20 @@
 Movie.destroy_all
 Studio.destroy_all
 Actor.destroy_all
-Role.destory_all
+Role.destroy_all
 
 # Generate models and tables, according to the domain model.
 # TODO!
 
 # These codes were written in terminal to generate 4 models 
-rails generate model Movie
-rails generate model Studio 
-rails generate model Actor 
-rails generate model Role
+# rails generate model Movie
+# rails generate model Studio 
+# rails generate model Actor 
+# rails generate model Role
+
+# In db/migrate file, relevant columns were added using
+# t.string "" 
+# t.integer ""
 
 # Insert data into the database that reflects the sample data shown above.
 # Do not use hard-coded foreign key IDs.
