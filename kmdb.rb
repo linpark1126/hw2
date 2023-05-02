@@ -94,11 +94,13 @@ Role.destroy_all
 # TODO!
 
 #Inserting data to Studio table
+#named the instance as "warner" to eliminate the find_by process for finding specific rows to associate with Movie table
 warner = Studio.new
 warner["name"] = "Warner Bros."
 warner.save
 
 #Inserting data to Actor table
+#named the instance as each actor's first name to eliminate the find_by process for finding specific rows to associate with Role tables
 christian = Actor.new
 christian["name"] = "Christian Bale"
 christian.save
@@ -144,6 +146,7 @@ anne["name"] = "Anne Hathaway"
 anne.save
 
 #Inserting data to Movie table with association to studio table
+#named the instance as each movie name to eliminate the find_by process for finding specific rows to associate with Role tables
 batman_begins = Movie.new
 batman_begins["title"] = "Batman Begins"
 batman_begins["year_released"] = "2005"
