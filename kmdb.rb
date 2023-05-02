@@ -99,9 +99,9 @@ warner["name"] = "Warner Bros."
 warner.save
 
 #Inserting data to Actor table
-bale = Actor.new
-bale["name"] = "Christian Bale"
-bale.save
+christian = Actor.new
+christian["name"] = "Christian Bale"
+christian.save
 
 michael = Actor.new
 michael["name"] = "Michael Caine"
@@ -143,7 +143,7 @@ anne = Actor.new
 anne["name"] = "Anne Hathaway"
 anne.save
 
-#Inserting data to Movie table
+#Inserting data to Movie table with association to studio table
 batman_begins = Movie.new
 batman_begins["title"] = "Batman Begins"
 batman_begins["year_released"] = "2005"
@@ -164,6 +164,98 @@ dark_knight_rises["year_released"] = "2012"
 dark_knight_rises["rated"] = "PG-13"
 dark_knight_rises["studio_id"] = warner["id"]
 dark_knight_rises.save
+
+#Inserting data to Role table with association to movie table and actor table
+
+new_role = Role.new
+new_role["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = batman_begins["id"]
+new_role["actor_id"] = christian["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Alfred"
+new_role["movie_id"] = batman_begins["id"]
+new_role["actor_id"] = michael["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Ra's Al Ghul"
+new_role["movie_id"] = batman_begins["id"]
+new_role["actor_id"] = liam["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Rachel Dawes"
+new_role["movie_id"] = batman_begins["id"]
+new_role["actor_id"] = katie["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Commissioner Gordon"
+new_role["movie_id"] = batman_begins["id"]
+new_role["actor_id"] = gary["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = dark_knight["id"]
+new_role["actor_id"] = christian["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Joker"
+new_role["movie_id"] = dark_knight["id"]
+new_role["actor_id"] = heath["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Harvey Dent"
+new_role["movie_id"] = dark_knight["id"]
+new_role["actor_id"] = aaron["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Alfred"
+new_role["movie_id"] = dark_knight["id"]
+new_role["actor_id"] = michael["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Rachel Dawes"
+new_role["movie_id"] = dark_knight["id"]
+new_role["actor_id"] = maggie["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Bruce Wayne"
+new_role["movie_id"] = dark_knight_rises["id"]
+new_role["actor_id"] = christian["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Commissioner Gordon"
+new_role["movie_id"] = dark_knight_rises["id"]
+new_role["actor_id"] = gary["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Bane"
+new_role["movie_id"] = dark_knight_rises["id"]
+new_role["actor_id"] = tom["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "John Blake"
+new_role["movie_id"] = dark_knight_rises["id"]
+new_role["actor_id"] = joseph["id"]
+new_role.save
+
+new_role = Role.new
+new_role["character_name"] = "Selina Kyle"
+new_role["movie_id"] = dark_knight_rises["id"]
+new_role["actor_id"] = anne["id"]
+new_role.save
 
 
 # Prints a header for the movies output
